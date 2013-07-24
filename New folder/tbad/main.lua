@@ -12,7 +12,7 @@ require "funfuncs"
 function love.load()
 	PlayerCam = camera:new()
 	DB = debugstatus:new(true)
-	GameWorld = world:new(200,200)
+	GameWorld = world:new(800,800)
 	LoadBlockResources()
 	BlockLoad()
 	GameWorld:randomSeedMap()
@@ -20,7 +20,7 @@ function love.load()
 end
 
 function love.update(dt)
-	--GameWorld:update()
+	GameWorld:update()
 	Hero:control(dt)
 	PlayerCam:follow(Hero)
 end
@@ -40,4 +40,5 @@ function love.keypressed(key)
 		love.event.push("quit")
 	end
 	Hero:jumping(key)
-end
+end 
+
